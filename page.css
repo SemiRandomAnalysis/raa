@@ -1,0 +1,317 @@
+﻿
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 1.1;
+    color: darkslategrey;
+    background-color: #F5F5F5;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 6rem;
+}
+
+
+span.headerBold {
+    font-weight: bold;
+}
+
+
+.canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+.paragraph {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+header {
+    display: block;
+    background-color:  #696969;
+    color: white;
+    margin-bottom: 15px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    overflow:hidden;
+    width: auto;
+}
+
+main {
+  position: relative;
+  margin: 0;
+  padding-bottom: 0px;
+  min-height: 100%;
+/*  font-family: "Helvetica Neue", Arial, sans-serif;*/
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 0px;
+  padding-bottom: 1rem;
+  background-color: inherit;
+  font-size: 10px;
+}
+
+.headerClass {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.headerSubtitleClass {
+    margin-bottom: 5px;
+}
+
+.chartcontainersidebyside {
+    width: 100%;
+    max-width: 1250px;
+    padding-top: 2px;
+}
+
+.chartcontainervertical {
+    width: 100%;
+    max-width: 650px;
+    padding-top: 2px;
+}
+
+.controlcontainersidebyside {
+    height: auto;
+    width: auto;
+    max-width: 1250px;
+    padding-bottom: 3px;
+    padding-top: 0px;
+
+}
+
+.controlcontainervertical {
+    height: auto;
+    width: auto;
+    max-width: 650px;
+    padding-bottom: 3px;
+    padding-top: 0px;
+}
+
+.sidebyside1 {
+    width: 49.5%;
+    max-width: 625px;
+    float: left;
+    border: 1px solid lightgrey;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.sidebyside2 {
+
+    margin-left: 50%;
+    width: 49.5%;
+    max-width: 625px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.sidebysideTable {
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+.vertical1 {
+    width: 100%;
+    float: none;
+    /*padding-top: none;*/
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.vertical2 {
+    width: 100%;
+    margin-top: 0%;
+    margin-left: 0px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.verticalTable {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: white;
+
+}
+
+.verticalLegend {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    margin-left: 50%;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+
+#loading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+.mydropdown {
+    font-size: 12px;
+    background-color: white;
+}
+
+.mybutton {
+    font-size: 12px;
+    /*background-color: white;*/
+}
+
+.layoutViewDropDown {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+.tableViewDropDown {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+.controlBarLeft {
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.tableContainerBottom {
+    margin-top: 5px;
+    height: auto;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    width: 99.5%;
+    border: 1px solid lightgrey;
+    background: white;
+    max-width: 1243px;
+    overflow: auto;
+}
+
+.tableContainerShort {
+    max-width: 650px;
+}
+
+.tableContainerMedium {
+    max-width:1243px;
+}
+
+
+.tableContainerNoMax {
+    /*max-width: none;*/
+    max-width: 1700px;
+    width: 1700px;
+}
+
+
+.hiddenClass {
+    visibility: hidden;
+    display: none;
+    height: 0px;
+    width: 0px;
+}
+
+.driverTableLarge {
+    height: 100%;
+    width: 98%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 15px;
+    overflow: auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* phones */
+    .mydropdown {
+        font-size: 14px;
+    }
+
+    .headerSubtitleClass {
+        display: none;
+    }
+
+    main {
+        padding-bottom: 1rem;
+    }
+
+    footer {
+        padding-top: 0rem;
+        padding-bottom: 5px;
+        font-size:10px;
+        /*font-size: 10px;*/
+    }
+}
+
+@media only screen and (min-device-width: 768px) {
+    /* tablets */
+    body {
+        font-size: 12px;
+    }
+
+    .mybutton {
+        font-size: 14px;
+    }
+
+    .page-title {
+        padding-bottom: 10px;
+    }
+
+    .mydropdown {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-device-width:769px) {
+    /* desktop */
+}
+
+.paragraph {
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+}

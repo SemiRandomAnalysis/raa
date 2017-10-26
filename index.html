@@ -1,0 +1,100 @@
+﻿<!doctype html>
+    <meta name="viewport"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:locale" content="en_US">
+    <!--
+        License info for the (hacktastic) code is MIT, which is compatible with all the libs used.
+
+        Chart.JS (MIT)
+        jquery (MIT)
+        D3 (BSD-3)
+        handsontable (MIT)
+    
+        But using the actual data dumps would need to follow Ergast DB's policy (similar to CC BY-NC-SA 4.0)
+    -->
+<html>
+
+    <head>
+        <title>Driver 1st Lap Analysis - Expected vs Actual</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.34.0/handsontable.full.min.js"></script>
+        <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.34.0/handsontable.full.min.css">
+        
+        <!--
+        <script src="https://handsontable.com/dist/handsontable.full.min.js"></script>
+        <link rel="stylesheet" media="screen" href="https://handsontable.com/dist/handsontable.full.min.css">
+        -->
+
+        <!--<script src="dist/Chart.bundle.min.js"></script>--> <!-- don't use min, resize bug -->
+        <!--
+        <script src="dist/Chart.bundle.js"></script>
+        <script src="dist/jquery.min.js"></script>
+        <script src="dist/d3.min.js"></script>
+        <script src="dist/handsontable.full.min.js"></script>
+        <link rel="stylesheet" media="screen" href="dist/handsontable.full.min.css">
+        -->
+
+        <link rel="icon" href="data:;base64,93AYDhcEFfw9="> <!--Get around IE need for favicon-->
+        <link rel="stylesheet" type="text/css" href="page.css">
+    </head>
+
+
+    <body>
+        <div id="loading">
+            <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." />
+        </div>
+        <header id="headerId" style="cursor:pointer;" onclick="location.href='https://semirandomanalysis.github.io/sra'">
+            <h1 class="headerClass" >A Look at an F1 Driver's Performance in the 1st Lap</h1>
+            <p class="headerSubtitleClass">Comparing how often they gained, kept, or lost positions against a historical average *</p>
+        </header>
+
+        <nav id="controlContainerId" class="controlContainersidebyside">
+            <select id="LayoutDropdown" class="mydropdown layoutViewDropDown" onchange=ChangeFromLayoutDropdown()></select>
+
+            <div id="controlBarId" class="controlbar">
+                <button id="NextDriverButtonId" class="mybutton" onclick=SelectNextDriver()>Next Driver</button>
+                <select id="DriverDropdown" class="mydropdown" onchange=ChangeFromDriverDropdown() onmouseup=SaveDimensions()></select>
+                <select id="Driver2Dropdown" class="mydropdown" onchange=ChangeFromDriver2Dropdown()></select>
+                <select id="ChartTypeDropdown" class="mydropdown" onchange=ChangeFromChartTypeDropdown()></select>
+            </div>
+        </nav>
+
+        <main>
+
+            <div id="tableContainerId" class="tablecontainer">
+                <select id="TableViewDropdown" class="mydropdown tableViewDropDown" onchange=ChangeFromTableViewDropdown()></select>
+                <select id="TableViewDriverDropdown" class="mydropdown tableViewDropDown" onchange=ChangeFromTableViewDriverDropdown()></select>
+                <input id="minStartsForTableId" style="display:none" type="number" name="quantity" min="0" max="250">
+                <div id="driverTableId" class="driverTableLarge" style="height:100%;overflow:auto;"></div>
+            </div>
+
+            <div id="charts" class="chartcontainer">
+                <div id="chart1" class="sidebyside1">
+                    <canvas id="expected"></canvas>
+                </div>
+                <div id="chart2" class="sidebyside2">
+                    <canvas id="actual"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="paragraph" style="text-align:left;overflow:hidden;display:inline-block;white-space:nowrap">
+                *&nbsp;Data covers all races between 2004 and Hungary 2017 (minus the 2005 USGP)<br />
+                &nbsp;&nbsp;<b>DNFFL</b> = Did Not Finish First Lap,<wbr>&nbsp;&nbsp;<b>RAA</b> = Races Above Average, adjusted for a 20 race season<br />
+            </p>
+            <p class="paragraph" style="padding-top:0px;">
+                &nbsp;&nbsp;Results pulled from the <a href="http://ergast.com/mrd">Ergast DB</a>
+            </p>
+            <p id="copyrightId" class="paragraph" style="padding-top:0px;">
+                &nbsp;&nbsp;&copy; {YEARS} Semi-Random Analysis
+            </p>
+        </footer>
+        <script src="body.js"></script>
+    </body>
+</html>
+
